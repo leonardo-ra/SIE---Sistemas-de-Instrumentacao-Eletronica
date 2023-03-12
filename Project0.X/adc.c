@@ -10,6 +10,12 @@
 #include "pic32.h"
 #include "adc.h"
 
+/**
+ * \brief Function that configures ADC and turns it on. 
+ * 
+ * \param src_chn            Select between [0 - 15] analog channels
+ * \param trigger_src        Set the ADC's trigger source: Auto, Timer3, Int0, and Manual.
+ * \param sample_time        If Manual trigger is set, selec the sample time X * TAD (TAD = 100ns) */
 void confAdc(uint8_t src_chn, ADCTriggerSrc_t trigger_src, uint8_t sample_time)
 {
     AD1CON1bits.ON = 0;     //First disable the ADC.
